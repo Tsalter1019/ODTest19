@@ -8,8 +8,6 @@ public class Main {
     //轮子
     static AtomicInteger num = new AtomicInteger(0);
 
-
-
     public static void main(String[] args) {
         for(int i=0;i<3;i++){
             Thread t = new Thread(new Runnable() {
