@@ -6,7 +6,7 @@ package com.DP.dpEvolution;
  *
  * 带备忘录的解法（自顶向下）
  */
-public class Blert {
+public class ClimbstairsUptoDown {
 
     public static void main(String[] args) {
         System.out.println(fib(5));

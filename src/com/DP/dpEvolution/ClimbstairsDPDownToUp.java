@@ -6,7 +6,7 @@ package com.DP.dpEvolution;
  *
  * 动态规划解法（自底向上）
  */
-public class Clarify {
+public class ClimbstairsDPDownToUp {
 
     public static void main(String[] args) {
 

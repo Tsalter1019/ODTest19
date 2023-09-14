@@ -6,7 +6,7 @@ package com.DP.dpEvolution;
  *
  *递归的暴力解法
  */
-public class Alex {
+public class Climbstairs {
     private static int fib(int n){
         if(n==1){
             return 1;

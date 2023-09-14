@@ -6,7 +6,7 @@ package com.DP.dpEvolution;
  *
  *
  */
-public class Xmicy {
+public class RobotPath {
 
     public static void main(String[] args) {
         System.out.println(fib(3,3));

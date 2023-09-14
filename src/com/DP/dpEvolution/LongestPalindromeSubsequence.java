@@ -9,7 +9,6 @@ public class LongestPalindromeSubsequence {
     public static int longestPalindromeSubseq(String s) {
         int m = s.length();
         int[][] dp = new int[m+1][m+1];
-
         //dp[0][m-1] 为答案
         //初始化
         for(int i=0;i<m;i++){
@@ -18,7 +17,6 @@ public class LongestPalindromeSubsequence {
                 else dp[i][j]=0;
             }
         }
-
         for(int i=m-2;i>=0;i--){
             for(int j=1;j<=m-1;j++){
                 if(i<j){
@@ -29,10 +27,8 @@ public class LongestPalindromeSubsequence {
                 }
             }}
         }
-
         return dp[0][m-1];
     }
-
     public static void main(String[] args) {
         System.out.println(longestPalindromeSubseq("bbbab"));
     }
