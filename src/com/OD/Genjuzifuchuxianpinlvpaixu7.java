@@ -2,6 +2,7 @@ package com.OD;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 根据字符出现频率排序
@@ -38,5 +39,11 @@ public class Genjuzifuchuxianpinlvpaixu7 {
             }
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(new Genjuzifuchuxianpinlvpaixu7().frequencySort(str));
     }
 }
