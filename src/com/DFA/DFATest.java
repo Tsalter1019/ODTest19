@@ -42,7 +42,7 @@ public class DFATest {
             for (int i = 0; i < sensitiveW.length(); i++) {
                 char sensitiveChar = sensitiveW.charAt(i);
                 //空字符跳过
-                if (sensitiveChar == 0x20) continue;
+                if (sensitiveChar == 0x20) continue;  // 0x20 为 ascii码表示的空格
                 HashMap subMap = (HashMap) nowMap.get(sensitiveChar);
                 if (subMap == null) {//没查找到当前字符对应的map，则新建map
                     subMap = new HashMap();

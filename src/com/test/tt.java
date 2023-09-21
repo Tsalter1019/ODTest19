@@ -61,6 +61,7 @@ public class tt{
         String s = sdf.format(new Date());
         System.out.println(new Date());
         System.out.println(s);
+        System.out.println("ss-"+(4.5*15.5));
         String [] str = s.split("-");
         for(int i=0;i<str.length;i++){
             System.out.println(str[i]);
