@@ -1,9 +1,7 @@
 package com.test;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 长度不超过nn，且包含子序列“us”的、只由小写字母构成的字符串有多少个？ 答案对10^9+710
@@ -52,7 +50,7 @@ public class tt{
         System.out.println("line: "+line.length()); // 0
         System.out.println(line);
     }*/
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(System.currentTimeMillis());
         System.out.println(Calendar.YEAR);
         System.out.println(Calendar.MONTH);
@@ -66,6 +64,95 @@ public class tt{
         for(int i=0;i<str.length;i++){
             System.out.println(str[i]);
         }
+    }*/
+    /*public static void main(String[] args) {
+        int[] nums = {1,2,3,1};
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(!map.keySet().contains(nums[i])){
+                map.put(nums[i],1);
+            }else{
+                map.put(nums[i],map.get(nums[i])+1);
+            }
+        }
+        int count=0;
+        for(int i :map.keySet()){
+            if(map.get(i)>=1){
+                count++;
+            }
+        }
+        *//*if(count>=1){
+            return true;
+        }else {
+            return false;
+        }*//*
+        System.out.println(map);
+    }*/
+    /*public int distMoney(int money, int children) {
+        if (money < children) {
+            return -1;
+        }
+        money -= children;
+        int cnt = Math.min(money / 7, children);
+        money -= cnt * 7;
+        children -= cnt;
+        if ((children == 0 && money > 0) || (children == 1 && money == 3)) {
+            cnt--;
+        }
+        return cnt;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new tt().distMoney(9,10));
+    }*/
+    public static void main(String[] args) {
+        System.out.println(solution());
+    }
+    /*public static int solution(){
+        String[] words = {"qwer","asdfgh","k"};
+        Arrays.sort(words,(s1,s2) -> {
+            return s1.length() - s2.length();
+        });
+        Arrays.sort(words, (s1, s2) -> {return s1.length() - s2.length();});
+        Arrays.sort(words, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return 0;
+            }
+        });
+        return 0;
+    }*/
+    public static String solution(){
+        Integer[] arr1 = {4,1,2,9,55,64,25};
+        Integer[] arr2 = {4,1,2,9,55,64,25};
+        Integer[] arr3 = {4,1,2,9,55,64,25};
+        String[] words = {"qwer","asdfgh","k"};
+        Arrays.sort(arr1,new Comparator<Integer>(){
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1-o2;
+            }
+        });
+        Arrays.sort(arr2, (o1, o2) -> o1-o2);
+        Arrays.sort(arr3, Comparator.comparingInt(o -> o));
+
+        String str1 = "";
+        String str2 = "";
+        String str3 = "";
+        for(int i=0;i<arr1.length-1;i++){
+            str1+=arr1[i]+",";
+        }
+        str1+=arr1[arr1.length-1];
+        for(int i=0;i<arr2.length-1;i++){
+            str2+=arr2[i]+",";
+        }
+        str2+=arr2[arr2.length-1];
+        for(int i=0;i<arr3.length-1;i++){
+            str3+=arr3[i]+",";
+        }
+        str3+=arr3[arr3.length-1];
+        return str1+"\n"+str2+"\n"+str3+"\n";
+    }
+
 }
 

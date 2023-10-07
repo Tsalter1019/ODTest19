@@ -30,7 +30,6 @@ public class Shuzuzhongdezifuchuanpipei1408 {
         return list;
     }
     public static void main(String[] args) {
-
         System.out.println("abc".contains("bc"));
     }
 }
