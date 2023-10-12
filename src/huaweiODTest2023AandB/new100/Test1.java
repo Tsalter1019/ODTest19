@@ -42,9 +42,7 @@ public class Test1 {
                     continue;
                 }
             }
-
         }
-
         return count;
     }
 }

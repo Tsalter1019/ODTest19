@@ -10,17 +10,49 @@ package leetcode;
 // a 和 b 仅由字符 '0' 或 '1' 组成
 // 字符串如果不是 "0" ，就不含前导零
 
+import java.util.Arrays;
+
 public class A67 {
     public static void main(String[] args) {
-
+        System.out.println(new A67().addBinary("11101","1111"));
     }
     public String addBinary(String a, String b) {
-        char[] arr = new StringBuffer(a).reverse().toString().toCharArray();
-        char[] brr = new StringBuffer(b).reverse().toString().toCharArray();
-        char[] result = new char[Math.max(arr.length,brr.length)];
-        for(int i=0;i<Math.max(arr.length,brr.length);i++){
+        int al=a.length();
+        int bl=b.length();
+        int len = Math.max(al,bl);
 
+        if(len==al){
+            String aa = a+"0";
+            String bb = b;
+            for(int i=0;i<al-bl;i++){
+                bb+="0";
+            }
+            bb+="0";
+            char [] temp = new char[al+1];
+            Arrays.fill(temp,'0');
+            for(int i=0;i<aa.length();i++){
+                for(int j=i;j<bb.length();j++){
+                    if(aa.charAt(i)=='0'&&bb.charAt(j)=='0'){
+                        temp[i] = '0';
+                    }else if(((aa.charAt(i)=='0'&&bb.charAt(j)=='1')||(aa.charAt(i)=='1'&&bb.charAt(j)=='0'))&&temp[i]=='0'){
+                        temp[i] = '1';
+                    }else if(((aa.charAt(i)=='0'&&bb.charAt(j)=='1')||(aa.charAt(i)=='1'&&bb.charAt(j)=='0'))&&temp[i]=='1'){
+                        temp[i] = '1';
+                        temp[i] = '0';
+                    }else if(aa.charAt(i)=='1'&&bb.charAt(j)=='1' &&temp[i]=='0'){
+                        temp[i] = '0';
+                        temp[i+1] = '1';
+                    }else{
+                        temp[i] = '1';
+                        temp[i+1] = '1';
+                    }
+                    break;
+                }
+            }
+            temp[temp.length-1] = '1';
+            System.out.println("eqweq");
         }
-        return "";
+
+        return "1";
     }
 }

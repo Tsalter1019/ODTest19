@@ -18,6 +18,5 @@ public class Kjinzhibiaoshixiadegeweishuzizonghe42 {
 
     public static void main(String[] args) {
         System.out.println(sumBase(34,2));
-
     }
 }
