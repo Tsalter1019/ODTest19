@@ -12,7 +12,7 @@ public class When {
     }
 
     public static void main(String[] args) {
-        System.out.println(new When().dow(2023,6,8));
+        System.out.println(new When().dow(2023,10,16));
     }
 }
 
