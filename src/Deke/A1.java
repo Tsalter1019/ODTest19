@@ -1,8 +1,6 @@
 package Deke;
 
-import com.CAS.Main;
-
-import java.util.List;
+import com.algorithm.CAS.Main;
 
 /**
  * 如果三个正整数A、B、C ,A²+B²=C²则为勾股数
