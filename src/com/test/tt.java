@@ -106,6 +106,7 @@ public class tt{
         System.out.println(new tt().distMoney(9,10));
     }*/
     public static void main(String[] args) {
+        System.out.println(15.5/12.0*4.5);
         System.out.println(solution());
     }
     /*public static int solution(){
@@ -155,4 +156,25 @@ public class tt{
     }
 
 }
+/**
+ * {
+ * 	"name": "Fear and Greed Index",
+ * 	"data": [
+ * fng_value,fng_classification,date
+ * 2023-10-19,52,Neutral
+ * 2023-10-18,50,Neutral
+ * 2023-10-17,52,Neutral
+ * 2023-10-16,47,Neutral
+ * 2023-10-15,45,Fear
+ * 2023-10-14,47,Neutral
+ * 2023-10-13,44,Fear
+ * 2023-10-12,45,Fear
+ * 2023-10-11,47,Neutral
+ * 2023-10-10,50,Neutral
+ * 	],
+ * 	"metadata": {
+ * 		"error": null
+ *        }
+ * }
+ */
 

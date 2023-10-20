@@ -2,7 +2,8 @@ package huaweiODTest2023AandBQuestionBank.new100;
 
 import java.util.Scanner;
 
-/**
+/** 需要打开多少监控器
+ *
  * 某长方形停车场，每个车位上方都有对应监控器
  * 当且仅当 在当前车位或者前后左右四个方向任意一个车位范围停车时，监控器才需要打开
  * 给出某一时刻停车场的停车分布，请统计最少需要打开多少个监控器
@@ -30,10 +31,12 @@ public class Test1 {
                  arr[i][j] = sc.nextInt();
              }
          }
+        System.out.println(solution(m,n,arr));
     }
     public static int solution(int m,int n,int[][] arr){
         int count=0;
-        int[][] offset = {{-1,0},{1,0},{0,1},{0,-1}};
+        int shisi = (int) Math.pow(10,4);
+        int[][] offsets = {{-1,0},{1,0},{0,1},{0,-1}};
 
         for(int x=0;x<m;x++){
             for(int y=0;y<n;y++){
@@ -41,8 +44,17 @@ public class Test1 {
                     count++;
                     continue;
                 }
+                for(int[] offset : offsets){
+                    int newX = x + offset[0];
+                    int newY = y + offset[1];
+                    if(newX>=0 && newX<m && newY>=0 && newY<n && arr[newX][newY]==1){
+                        count++;
+                        break;
+                    }
+                }
             }
         }
+
         return count;
     }
 }
