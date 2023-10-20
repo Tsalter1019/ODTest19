@@ -35,7 +35,6 @@ public class Test1 {
     }
     public static int solution(int m,int n,int[][] arr){
         int count=0;
-        int shisi = (int) Math.pow(10,4);
         int[][] offsets = {{-1,0},{1,0},{0,1},{0,-1}};
 
         for(int x=0;x<m;x++){
