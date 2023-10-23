@@ -1,2 +1,2 @@
-# 日常的算法题记录包含力扣 牛客等等
+# It's a daily algorithm practise,including nowcoder、leetcode etc..
 
