@@ -17,12 +17,36 @@ import java.util.Scanner;
  */
 public class Iptoint {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
+       /* Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();*/
+        String s = "100#101#1#5";
         System.out.println(solution(s));
     }
-    public static String solution(String str){
-        String[] ss = str.split("#");
-        return null;
+    public static String solution(String strings){
+        String[] ss = strings.split("#");
+        int len = ss.length;
+        long count = 0;
+        boolean isF = true;
+
+        if(len == 4){
+            for(int i =0;i<len;i++){
+                int n = Integer.parseInt(ss[i]);
+                if(i==0 && (n<1 || n>128)) {
+                    isF = false;
+                    break;
+                }else if(n<0 || n>255){
+                    isF = false;
+                    break;
+                }
+                count += n << (8 * (3 - i));
+            }
+        } else {
+            isF = false;
+        }
+        if(isF) {
+            return count+"";
+        }else{
+            return "invalid IP";
+        }
     }
 }
