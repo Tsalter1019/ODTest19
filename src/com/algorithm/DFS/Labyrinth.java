@@ -1,4 +1,4 @@
-package com.algorithm.dfs;
+package com.algorithm.DFS;
 
 import java.util.LinkedList;
 import java.util.Queue;
