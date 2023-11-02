@@ -1,0 +1,88 @@
+public void recur(int level, int param) {
+    // terminator
+    if (level > MAX_LEVEL) {
+      // process result
+      return;
+    }
+    // process current logic
+    process(level, param);
+    // drill down
+    recur( level: level + 1, newParam);
+    // restore current status
+}
+人肉递归低效、很累
+找到最近最简方法，将其拆解成可重复解决的问题
+数据归纳法思维（抵制人肉递归的诱惑）
+
+动态规划 Dynamic Programming
+Wiki定义：https://en.wikipedia.org/wiki/Dynamic_programming
+
+“simplifying a complicated problem by breaking it down into simpler sub-problems”（in a recursive manner）
+
+将一个复杂的问题，把它分解成简单的子问题
+Divide & Conquer + Option substructure 分治 + 最优子结构
+
+在Wiki里DP的定义它就明确指出，你需要进行分治，在这里可以看到，DP和分治它们是有内在联系的，它们并不少完全割裂的两个算法，那么它和分治很多
+时候本质的一个区别，就是上面第三点这里。一般来说动态规划的问题，它会是让你求一个最优解或者求一个最大值，或者求一个最少方式。正是因为它有
+所谓的这种最优子结构存在的话，那么你在中间的每一步的话就不需要把所有的状态都保存下来，你只需要存最优的状态，当然你还需要证明如果我每一步
+都存着相当于最优的值，最后的话我就能够推导出一个全局的最优的值。那么正是因为这样的话，就是引入了两个：一个就是有所谓的缓存了或者是说状态
+的存储数组，第二个的话就是在每一步的话都会把次优的状态给淘汰掉，只保留在这一步里面最优或者较优的一些状态来推导出最后的全局最优。
+
+关键点
+
+动态规划 和 递归或者分治 没有根本上的区别（关键看有无最优的子结构）
+共性：找到重复子问题
+差异性：最优子结构、中途可以淘汰次优解
+
+实战例题一：斐波拉契数列
+首先，斐波拉契数列的话，如果把“傻递归”弄出来的话，它的递归状态树如此，所以如果“傻递归”的话时间复杂度是指数级别的，如果在面试的时候一定
+不要直接说用递归就解决来这个问题了，因为慢的要死，而且是没必要的慢。那么它的程序的就是下面一块。
+
+int fib (int n) {
+    if(n <= 0){
+        return 0;
+    }else if (n == 1){
+        return 1;
+    }else{
+        return fib(n-1) + fib(n-2);
+    }
+}
+简化为
+int fib (int n){
+    return n<=1 ? n : fib(n-1) + fib(n-2);
+}
+上面这个代码只是更加简洁清爽了，但并不改变时间复杂度，如果来改进时间复杂度？接下来就想讲一个就是加一个缓存，你可以存在数组里面，
+如果你用Pthon的你可以用LRU Cache之类的，那么这种方法就叫做记忆化搜索。
+
+int fib (int n, int[] memo) {
+  if (n <= 1) {
+    return n;
+  }
+  if (memo[n] == 0) {
+    memo[n] = fib(n-1) + fib(n-2);
+  }
+  return memo[n];
+}
+在这里只要你写递归的话，后面你会发现，既然它的递归公式是这样，那么与其用一个递归再加记忆化搜索的这种形式，那么不如我们直接写一个循环，
+for的话就从最开始的初始值把它设好来之后，然后从第三个元素开始一直循环到最后我们要的，最后结果就在 a[n]里面，那么这个我们就叫做**“
+自底向上”**。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
