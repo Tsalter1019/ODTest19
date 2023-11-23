@@ -27,7 +27,7 @@ import com.algorithm.CAS.Main;
  *
  * Na
  */
-public class A1 {
+public class E1 {
     public static void main(String[] args) {
         //System.out.println(isCoprime(6,5));
     }
