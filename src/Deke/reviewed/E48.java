@@ -17,7 +17,7 @@ package Deke.reviewed;
            数组中有5个元组  第一个和第二个元素没有相同字符
            满足条件 输出7*2=14
          */
-public class A48 {
+public class E48 {
     public static void main(String[] args) {
         String[] str = {"iwdvpbn","hk","iuop","iikd","kadgpf"};
         System.out.println(solution(str));

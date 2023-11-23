@@ -24,9 +24,9 @@ package com.algorithm.DP.BM;
  * 根据斐波那契数列的定义可知，fib(1)=1,fib(2)=1,fib(3)=fib(3-1)+fib(3-2)=2,fib(4)=fib(4-1)+fib(4-2)=3，所以答案为3。
  *
  */
-public class A62 {
+public class E62 {
     public static void main(String[] args) {
-        System.out.println(new A62().Fibonacci(1200));
+        System.out.println(new E62().Fibonacci(1200));
     }
     public long Fibonacci(int n) {
         long[] dp = new long[n+1];
