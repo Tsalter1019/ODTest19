@@ -1,7 +1,6 @@
 package Deke;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
   给定一个射击比赛成绩单
@@ -52,7 +51,7 @@ import java.util.stream.Collectors;
         由于3号和5号成绩相等  且id 5>3
         所以输出5,3,7,4
    */
-public class A86{
+public class E86{
     public static void main(String[] args) {
         int n = 13;
         int[] arr = {3,3,7,4,4,4,4,7,7,3,5,5,5};

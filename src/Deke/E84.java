@@ -22,7 +22,7 @@ import java.util.Scanner;
         9999458941425101
         9999458941425101
    */
-public class A84 {
+public class E84 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] str = sc.nextLine().split(",");
