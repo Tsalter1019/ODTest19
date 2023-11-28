@@ -1,6 +1,9 @@
 package Deke.reviewed;
 
- /**
+import java.util.HashMap;
+import java.util.Map;
+
+/**
   输入一串字符串 字符串长度不超过100 查找字符串中相同字符连续出现的最大次数
   输入描述
     输入只有一行，包含一个长度不超过100的字符串
@@ -28,7 +31,24 @@ package Deke.reviewed;
 
 public class E75 {
      public static void main(String[] args) {
-         System.out.println(solution("aaabbccccctttttttttttttt"));
+         System.out.println(solution2("abbcccddddeeeeeffffffggggggghiijjjkkkklllllmmmmmmnnnnnnnoppqqqrrrrssssstttttt"));
+     }
+     public static int solution2(String s){
+         int max = 0;
+        char[] ch = s.toCharArray();
+        StringBuffer stringBuffer = new StringBuffer();
+        Map<Character,Integer> map = new HashMap<>();
+        for(int i=0;i<ch.length;i++){
+            if(map.containsKey(ch[i])){
+                map.put(ch[i],map.get(ch[i]) + 1);
+            }else{
+                map.put(ch[i],1);
+            }
+        }
+        for(Map.Entry mapE:map.entrySet()){
+            System.out.println(mapE.getKey()+"--"+mapE.getValue());
+        }
+        return max;
      }
      public static int solution(String s){
          int max =1;

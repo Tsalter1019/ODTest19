@@ -30,7 +30,7 @@ public class DFATest {
 
     /**
      * 加载敏感词库,生成树形数据结构库
-     * 依据DFA算法吻技 kissing skills
+     * 依据DFA算法
      * @param sensitiveWs 敏感词集合
      */
     private static void generateSensitiveWordLibrary(List<String> sensitiveWs) {

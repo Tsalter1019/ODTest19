@@ -9,7 +9,7 @@ package com.algorithm.DP.dpEvolution;
 public class RobotPath {
 
     public static void main(String[] args) {
-        System.out.println(fib(3,3));
+        System.out.println(fib(3,7));
     }
 
     private static int fib(int m,int n){
@@ -24,6 +24,7 @@ public class RobotPath {
         for(int j=0;j<n;j++){
             dp[0][j] = 1;
         }
+
 
         for(int i=1;i<m;i++){
             for(int j=1;j<n;j++){

@@ -22,7 +22,22 @@ public class E4 {
         return fib(n-1) + fib(n-3);
     }
 
+    public static int fib2(int n){
+        int[] arr = new int[n+2];
+        arr[1] = 1;
+        arr[2] = 1;
+        arr[3] = 2;
+        for(int i=4;i<=n;i++){
+            arr[i] = arr[i-1] + arr[i-3];
+        }
+        return arr[n];
+    }
+
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         System.out.println(fib(50));
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
     }
 }
