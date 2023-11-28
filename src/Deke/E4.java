@@ -12,7 +12,7 @@ package Deke;
  *
  */
 public class E4 {
-    public static int fib(int n){
+    public static int fib(int n){//fibonacci写法
         if(n == 1 || n == 2){
             return 1;
         }
@@ -22,7 +22,7 @@ public class E4 {
         return fib(n-1) + fib(n-3);
     }
 
-    public static int fib2(int n){
+    public static int fib2(int n){//动态规划写法
         int[] arr = new int[n+2];
         arr[1] = 1;
         arr[2] = 1;
@@ -31,6 +31,17 @@ public class E4 {
             arr[i] = arr[i-1] + arr[i-3];
         }
         return arr[n];
+    }
+    public static int fib3(int n){//
+        int step1 = 1, step2 = 1, step3 = 2;
+        int step4 = n == 1 || n == 2 ? 1 : 2;
+        for(int i=4;i<=n;i++){
+            step4 = step3 + step1;
+            step1 = step2;
+            step2 = step3;
+            step3 = step4;
+        }
+        return step4;
     }
 
     public static void main(String[] args) {
