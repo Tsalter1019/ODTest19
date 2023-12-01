@@ -1,7 +1,5 @@
-package test.java;
+package Test.java;
 
-
-import java.util.Arrays;
 
 public class Test {
     public int unequalTriplets(int[] nums) {
@@ -21,7 +19,10 @@ public class Test {
 
     public static void main(String[] args) {
         int[] arr1 = {4,4,2,4,3};
+        String str = "中天aabbcccc";
+        char[] ch = str.toCharArray();
+        System.out.println(ch);
 
-        System.out.println(new Test().unequalTriplets(arr1));
+        //System.out.println(new Test().unequalTriplets(arr1));
     }
 }

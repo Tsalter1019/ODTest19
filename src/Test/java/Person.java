@@ -1,4 +1,4 @@
-package test.java;
+package Test.java;
 
 //  代码块的执行顺序题
 public class Person {
