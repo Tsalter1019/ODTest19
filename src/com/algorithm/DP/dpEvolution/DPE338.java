@@ -24,7 +24,7 @@ package com.algorithm.DP.dpEvolution;
 // 很容易就能实现时间复杂度为 O(n log n) 的解决方案，你可以在线性时间复杂度 O(n) 内用一趟扫描解决此问题吗？
 // 你能不使用任何内置函数解决此问题吗？（如，C++ 中的 __builtin_popcount ）
 // Related Topics 位运算 动态规划 👍 1283 👎 0
-public class DP338 {
+public class DPE338 {
     public static void main(String[] args) {
         //System.out.println(new DP338().count1(0));
         //System.out.println(new DP338().count1(1));
@@ -32,7 +32,7 @@ public class DP338 {
         //System.out.println(new DP338().count1(3));
         //System.out.println(new DP338().count1(4));
         //System.out.println(new DP338().count1(5));
-        System.out.println(new DP338().countBits(5));
+        System.out.println(new DPE338().countBits(5));
     }
     public int[] countBits(int n) {
         int[] arr = new int[n+1];
