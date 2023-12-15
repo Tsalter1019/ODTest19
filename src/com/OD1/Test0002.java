@@ -1,5 +1,9 @@
 package com.OD1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * 讨论
  * 最后编辑
@@ -30,6 +34,40 @@ package com.OD1;
  */
 public class Test0002 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr1 = getArray(sc.nextLine());
+        int[] arr2 = getArray(sc.nextLine());
+        int k = sc.nextInt();
 
+        int sum = 0;
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i : arr1) {
+            for(int j : arr2) {
+                list.add(i+j);
+            }
+        }
+
+        Integer[] res = new Integer[list.size()];
+        list.toArray(res);
+        Arrays.sort(res);
+
+        for(int i = 0; i < k; i++) {
+            sum += res[i];
+        }
+        System.out.println(sum);
+
+        sc.close();
+    }
+
+    private static int[] getArray(String line1){
+        String[] split1 = line1.split("\\s+");
+        int[] arr1 = new int[Integer.parseInt(split1[0])];
+
+        for(int i=1;i<split1.length;i++){
+            arr1[i-1] = Integer.parseInt(split1[i]);
+        }
+        return arr1;
     }
 }
