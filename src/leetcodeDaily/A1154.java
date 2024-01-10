@@ -35,7 +35,6 @@ public class A1154 {
         if((year%4==0 && year%100!=0 && month>2)|| year%400==0 && month>2){
             sum+=1;
         }
-
         return sum;
     }
 }
