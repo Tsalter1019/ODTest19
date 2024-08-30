@@ -1,7 +1,9 @@
 package leetcodeDaily;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s 。
@@ -28,26 +30,21 @@ public class B139 {
         list.add("cat");
         System.out.println(wordBreak(s,list));
     }
+
     public static boolean wordBreak(String s, List<String> wordDict) {
-            for(int i=0;i<wordDict.size();i++){
-                if(s.contains(wordDict.get(i))){
-                    s = quchu(s,wordDict.get(i));
-                    if(s.length()==0){
-                        return true;
-                    }else{
-                        return wordBreak(s,wordDict);
-                    }
+        Set<String> words = new HashSet<String>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        for(int i=1;i<=s.length();i++){
+            for(int j=0;j<i;j++){
+                String  temp = s.substring(j,i);
+                if(dp[j] && words.contains(s.substring(j,i))){
+                    dp[i] = true;
+                    break;
                 }
             }
-        return false;
+        }
+        return dp[s.length()];
     }
 
-    public static String quchu(String a,String b){//String      a.indexOf(b)  如果字符串a包含b  则返回b在a中的第一个索引位置
-        StringBuilder stringBuilder = new StringBuilder();
-        if(a.indexOf(b)!=-1){
-            stringBuilder.append(a.substring(0,a.indexOf(b)));
-            stringBuilder.append(a.substring(a.indexOf(b)+b.length(),a.length()));
-        }
-        return stringBuilder.toString();
-    }
 }
